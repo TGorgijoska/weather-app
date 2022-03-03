@@ -15,7 +15,7 @@ async function fetchWeather(key, city, format){
 }
 async function geocoding(city, key){
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&&appid=${key}`, {mode: 'cors'});
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&&appid=${key}`, {mode: 'cors'});
         const result = await response.json();
         return {
             'lat': result[0].lat,
