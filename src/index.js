@@ -11,7 +11,7 @@ async function handleSearch(){
         const city = document.getElementById('cityInput').value;
         const format = document.getElementById('format').value;
         const weatherInfo = await fetchWeather(key, city, format);
-        loadPage(city, weatherInfo);     
+        loadPage(city, weatherInfo, format);     
     }
     catch (err){
         console.log(err);

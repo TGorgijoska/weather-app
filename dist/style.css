@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*------------- START ------------*/
+body{
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.1s ease;
+}
+body.day{
+    background: url(./img/day.jpg);
+    background-position: center;
+    background-size: cover;
+}
+body.night{
+    background: url(./img/night.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+header{
+    display:flex;
+    justify-content:center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 193, 193, 0.5);
+}
+header form{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+#cityInput, #format, #search-btn{
+    margin: 0.8em;
+    padding: 0.3em 1em;
+    background-color: rgba(211, 226, 235, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 193, 193, 0.5);
+    outline: none;
+    cursor: pointer;
+}
+#cityInput:hover, #format:hover, #search-btn:hover{
+    background-color: rgba(211, 226, 235, 0.8);
+
+}
+#search-btn{
+    text-transform: uppercase;
+}
+main{
+    background-color: rgba(255, 255, 255, 0.3);
+    /* display: flex; */
+}
+section{
+    width: 100%;
+    min-height: calc(100vh - 70px);
+}
+.currentSection{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+#cityName{
+    font-size: 4em;
+    font-weight: 400;
+}
+#date {
+    font-style: italic;
+}
+#temp{
+    font-size: 5em;
+    border-bottom: 2px solid pink;
+    padding: 0 1em;
+}
+#descr{
+    font-style: italic;
+}
+
+
+.futureSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+    /* grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); */
+    /* border-left: 1px solid rgba(255, 193, 193, 0.5) */
+}
+.day-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(211, 226, 235, 0.5);
+    border-radius: 50%;
+    margin: 1em;
+    padding: 1em;
+    width:170px;
+    height:170px;
+}
+.minmax{
+    font-weight: bold;
+}
+.dayName{
+    font-style: italic;
+}
