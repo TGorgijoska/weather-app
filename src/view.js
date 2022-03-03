@@ -1,6 +1,6 @@
 import {format, fromUnixTime} from 'date-fns';
 
-    export default function loadPage (city, data, unit){
+    export function loadPage (city, data, unit){
         reset();
         const date = format(fromUnixTime(data.current.dt), 'EEEE, MMM d yyyy');
         const time = format(fromUnixTime(data.current.dt), 'kk:mm');
@@ -9,6 +9,11 @@ import {format, fromUnixTime} from 'date-fns';
         setBG(time, sunrise, sunset);
         renderCurrentSection(city, date, Math.round(data.current.temp), data.current.weather[0].main, sunrise, sunset, data.current.weather[0].icon, unit);
         renderFutureSection(data.daily, unit);
+    }
+    export function handleError(){
+        reset();
+        const section = document.querySelector('.currentSection');
+        section.innerHTML = 'There was an error, try again'
     }
 
     const renderCurrentSection = (city, datetime, dataTemp, dataDescr, sunrise, sunset, icon, unit) =>{
